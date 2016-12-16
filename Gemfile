@@ -1,4 +1,4 @@
 # frozen_string_literal: true
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# gem "rails"
+gem 'kumogata2' # Kumogata2 is a tool for AWS CloudFormation
