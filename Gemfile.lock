@@ -46,6 +46,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   kumogata2
   kumogata2-plugin-ruby
   rubocop
