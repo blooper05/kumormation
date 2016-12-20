@@ -65,3 +65,13 @@ template do
     end
   end
 end
+
+post do |output|
+  puts <<~MSG
+
+    You're almost there :)
+    Run the command below and set bounce notifications SNS topic to your SES identities.
+
+    ruby scripts/ses_bounce_script.rb '#{output['MySNSTopicTopicARN']}'
+  MSG
+end
