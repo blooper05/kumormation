@@ -1,7 +1,7 @@
 template do
   AWSTemplateFormatVersion '2010-09-09'
 
-  Description <<~EOS
+  Description <<~EOS.chomp
     This template creates an Amazon SNS topic, and subscribes the Amazon SQS endpoint to that topic.
   EOS
 
