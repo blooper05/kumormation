@@ -13,6 +13,29 @@ template do
       end
     end
 
+    MySQSQueuePolicy do
+      Type 'AWS::SQS::QueuePolicy'
+      Properties do
+        PolicyDocument do
+          Id 'SESBounceSQSPolicy'
+          Version '2012-10-17'
+          Statement do
+            Sid 'SESBounceSQSPolicy'
+            Effect 'Allow'
+            Principal '*'
+            Action 'SQS:SendMessage'
+            Resource { Fn__GetAtt 'MySQSQueue', 'Arn' }
+            Condition do
+              ArnEquals 'aws:SourceArn' do
+                Ref 'MySNSTopic'
+              end
+            end
+          end
+        end
+        Queues { |*| Ref 'MySQSQueue' }
+      end
+    end
+
     MySNSTopic do
       Type 'AWS::SNS::Topic'
       Properties do
