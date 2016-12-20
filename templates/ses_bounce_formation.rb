@@ -6,6 +6,13 @@ template do
   EOS
 
   Resources do
+    MySQSQueue do
+      Type 'AWS::SQS::Queue'
+      Properties do
+        QueueName 'SESBounceSQS'
+      end
+    end
+
     MySNSTopic do
       Type "AWS::SNS::Topic"
       Properties do
@@ -111,6 +118,13 @@ template do
     end
   end
   Outputs do
+    MySQSQueueQueueURL do
+      Description 'URL for MySQSQueue.'
+      Value do
+        Ref 'MySQSQueue'
+      end
+    end
+
     MySNSTopicTopicARN do
       Description "ARN for MySNSTopic."
       Value do
