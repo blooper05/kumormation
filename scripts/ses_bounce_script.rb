@@ -7,7 +7,7 @@ arn = ARGV[0]
 raise 'invalid arguments' unless arn =~ /arn:aws:sns:us-east-1:\d{12}:SESBounce/
 
 ses.list_identities.identities.each do |identity|
-  print %(Set Bounce Notifications SNS Topic to "#{identity}" [y/N]? )
+  print %(Set bounce notifications SNS topic to "#{identity}" [y/N]? )
 
   next unless STDIN.gets.chomp == 'y'
 
