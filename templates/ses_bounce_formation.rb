@@ -1,23 +1,10 @@
 template do
-  AWSTemplateFormatVersion "2010-09-09"
-  Description "This sample template creates an HTTP endpoint using AWS Elastic Beanstalk, creates an Amazon SNS topic, and subscribes the HTTP endpoint to that topic. **WARNING** This template creates one or more Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template."
-  Parameters do
-    KeyName do
-      Description "Name of an existing EC2 KeyPair to enable SSH access to the Amazon EC2 instance(s) in the environment deployed for the AWS Elastic Beanstalk application in this template."
-      Type "String"
-      MinLength 1
-      MaxLength 255
-      AllowedPattern "[\\x20-\\x7E]*"
-      ConstraintDescription "can contain only ASCII characters."
-    end
-    MyPublishUserPassword do
-      NoEcho "true"
-      Type "String"
-      Description "Password for the IAM user MyPublishUser"
-      MinLength 1
-      MaxLength 41
-    end
-  end
+  AWSTemplateFormatVersion '2010-09-09'
+
+  Description <<~EOS
+    This template creates an Amazon SNS topic, and subscribes the Amazon SQS endpoint to that topic.
+  EOS
+
   Resources do
     MySNSTopic do
       Type "AWS::SNS::Topic"
