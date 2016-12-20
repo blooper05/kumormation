@@ -50,10 +50,10 @@ template do
   end
 
   Outputs do
-    MySQSQueueQueueURL do
-      Description 'URL for MySQSQueue.'
+    MySQSQueueQueueARN do
+      Description 'ARN for MySQSQueue.'
       Value do
-        Ref 'MySQSQueue'
+        Fn__GetAtt 'MySQSQueue', 'Arn'
       end
     end
 
