@@ -14,23 +14,14 @@ template do
     end
 
     MySNSTopic do
-      Type "AWS::SNS::Topic"
+      Type 'AWS::SNS::Topic'
       Properties do
+        DisplayName 'SESBounce'
         Subscription do |*|
-          Endpoint do
-            Fn__Join [
-              "/",
-              [
-                "http:/",
-                _{
-                  Fn__GetAtt "MyEndpointEnvironment", "EndpointURL"
-                },
-                "myendpoint"
-              ]
-            ]
-          end
-          Protocol "http"
+          Endpoint { Fn__GetAtt 'MySQSQueue', 'Arn' }
+          Protocol 'sqs'
         end
+        TopicName 'SESBounce'
       end
     end
     MyEndpointApplication do
@@ -126,9 +117,9 @@ template do
     end
 
     MySNSTopicTopicARN do
-      Description "ARN for MySNSTopic."
+      Description 'ARN for MySNSTopic.'
       Value do
-        Ref "MySNSTopic"
+        Ref 'MySNSTopic'
       end
     end
     MyPublishUserInfo do
