@@ -209,3 +209,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+### Kumogata2 ###
+result.json
