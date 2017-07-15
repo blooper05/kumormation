@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'bundler'
 Bundler.require
 
@@ -14,13 +15,13 @@ ses.list_identities.identities.each do |identity|
   ses.set_identity_notification_topic(
     identity:          identity,
     notification_type: 'Bounce',
-    sns_topic:         arn
+    sns_topic:         arn,
   )
 
   ses.set_identity_headers_in_notifications_enabled(
     identity:          identity,
     notification_type: 'Bounce',
-    enabled:           true
+    enabled:           true,
   )
 
   puts ':)'
