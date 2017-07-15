@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    annotate_gem (0.0.11)
+      bundler (~> 1.1)
     ast (2.3.0)
     aws-sdk (2.6.38)
       aws-sdk-resources (= 2.6.38)
@@ -46,10 +48,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate_gem
   aws-sdk
   kumogata2
   kumogata2-plugin-ruby
   rubocop
 
 BUNDLED WITH
-   1.13.6
+   1.15.1
