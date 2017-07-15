@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 template do
   AWSTemplateFormatVersion '2010-09-09'
 
