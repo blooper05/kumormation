@@ -224,3 +224,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/ruby,sublimetext,vim,jetbrains,linux,osx,windows
+
+result.json
