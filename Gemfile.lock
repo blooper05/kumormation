@@ -4,13 +4,13 @@ GEM
     annotate_gem (0.0.11)
       bundler (~> 1.1)
     ast (2.3.0)
-    aws-sdk (2.10.16)
-      aws-sdk-resources (= 2.10.16)
-    aws-sdk-core (2.10.16)
+    aws-sdk (2.10.32)
+      aws-sdk-resources (= 2.10.32)
+    aws-sdk-core (2.10.32)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.16)
-      aws-sdk-core (= 2.10.16)
+    aws-sdk-resources (2.10.32)
+      aws-sdk-core (= 2.10.32)
     aws-sigv4 (1.0.1)
     coderay (1.1.1)
     diffy (3.2.0)
@@ -18,14 +18,14 @@ GEM
     hashie (3.5.6)
     highline (1.7.8)
     jmespath (1.3.1)
-    kumogata2 (0.1.14)
+    kumogata2 (0.1.15)
       aws-sdk (>= 2.3.0)
       coderay
       diffy
       hashie
       highline
       term-ansicolor
-    kumogata2-plugin-ruby (0.1.4)
+    kumogata2-plugin-ruby (0.1.6)
       dslh (>= 0.3.7)
       kumogata2
     parallel (1.12.0)
@@ -59,4 +59,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
