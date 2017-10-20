@@ -476,7 +476,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate_gem
-  aws-sdk
+  aws-sdk-ses
   kumogata2
   kumogata2-plugin-ruby
   rubocop
