@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'aws-sdk'               # AWS SDK for Ruby
+gem 'aws-sdk-ses'
 gem 'kumogata2'             # Kumogata2 is a tool for AWS CloudFormation.
 gem 'kumogata2-plugin-ruby' # Kumogata2 ruby plugin.
 
