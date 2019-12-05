@@ -6,7 +6,9 @@ Bundler.require
 ses = Aws::SES::Client.new
 arn = ARGV[0]
 
-raise 'invalid arguments' unless arn.match?(/arn:aws:sns:us-east-1:\d{12}:SESBounce/)
+unless arn.match?(/arn:aws:sns:us-east-1:\d{12}:SESBounce/)
+  raise 'invalid arguments'
+end
 
 ses.list_identities.identities.each do |identity|
   print %(Set bounce notifications SNS topic to "#{identity}" [y/N]? )
